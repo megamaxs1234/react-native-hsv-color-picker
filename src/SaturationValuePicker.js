@@ -5,8 +5,14 @@ import {
   ViewPropTypes,
   PanResponder,
   StyleSheet,
+  Dimensions,
+  I18nManager,
 } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
+//import { LinearGradient } from 'expo-linear-gradient';
+import LinearGradient from 'react-native-linear-gradient';
+
+const {width, height} = Dimensions.get('window');
+
 import PropTypes from 'prop-types';
 import chroma from 'chroma-js';
 import normalizeValue from './utils';
@@ -121,8 +127,9 @@ export default class SaturationValuePicker extends Component {
               '#fff',
               chroma.hsl(hue, 1, 0.5).hex(),
             ]}
-            start={[0, 0.5]}
-            end={[1, 0.5]}
+            // start={[0, 0.5]}
+            // end={[1, 0.5]}
+            start={{x: 0, y: 0.5}} end={{x: 1, y: 0.5}}
           >
             <LinearGradient
               colors={[
@@ -168,7 +175,8 @@ const styles = StyleSheet.create({
   },
   slider: {
     top: 0,
-    left: 0,
+    right: I18nManager.isRTL ? 0 : null,
+    left: I18nManager.isRTL ? null :0,
     position: 'absolute',
     borderColor: '#fff',
   },
