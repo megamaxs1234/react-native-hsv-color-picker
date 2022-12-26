@@ -3,10 +3,14 @@ import {
   View,
   ViewPropTypes,
   StyleSheet,
+  Dimensions,
 } from 'react-native';
 import PropTypes from 'prop-types';
 import HuePicker from './HuePicker';
 import SaturationValuePicker from './SaturationValuePicker';
+
+const {width, height} = Dimensions.get('window');
+
 
 export default class HsvColorPicker extends Component {
   constructor(props) {
@@ -47,21 +51,7 @@ export default class HsvColorPicker extends Component {
     } = this.props;
     return (
       <View style={[styles.container, containerStyle]}>
-        <SaturationValuePicker
-          containerStyle={satValPickerContainerStyle}
-          borderRadius={satValPickerBorderRadius}
-          size={satValPickerSize}
-          sliderSize={satValPickerSliderSize}
-          hue={satValPickerHue}
-          saturation={satValPickerSaturation}
-          value={satValPickerValue}
-          onDragStart={onSatValPickerDragStart}
-          onDragMove={onSatValPickerDragMove}
-          onDragEnd={onSatValPickerDragEnd}
-          onDragTerminate={onSatValPickerDragTerminate}
-          onPress={onSatValPickerPress}
-          ref={this.satValPicker}
-        />
+      
         <HuePicker
           containerStyle={huePickerContainerStyle}
           borderRadius={huePickerBorderRadius}
@@ -75,6 +65,23 @@ export default class HsvColorPicker extends Component {
           onDragTerminate={onHuePickerDragTerminate}
           onPress={onHuePickerPress}
         />
+         <SaturationValuePicker
+          containerStyle={satValPickerContainerStyle}
+          borderRadius={satValPickerBorderRadius}
+          size={satValPickerSize}
+          sliderSize={satValPickerSliderSize}
+          hue={satValPickerHue}
+          saturation={satValPickerSaturation}
+          value={satValPickerValue}
+          onDragStart={onSatValPickerDragStart}
+          onDragMove={onSatValPickerDragMove}
+          onDragEnd={onSatValPickerDragEnd}
+          onDragTerminate={onSatValPickerDragTerminate}
+          onPress={onSatValPickerPress}
+          ref={this.satValPicker}
+        /> 
+      
+        
       </View>
     );
   }
@@ -130,8 +137,8 @@ HsvColorPicker.defaultProps = {
   onHuePickerPress: null,
   satValPickerContainerStyle: {},
   satValPickerBorderRadius: 0,
-  satValPickerSize: 200,
-  satValPickerSliderSize: 24,
+  satValPickerSize: 200, //200
+  satValPickerSliderSize: 24, //24
   satValPickerHue: 0,
   satValPickerSaturation: 1,
   satValPickerValue: 1,
