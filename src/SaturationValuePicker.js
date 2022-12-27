@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import {
   View,
   TouchableWithoutFeedback,
-  ViewPropTypes,
   PanResponder,
   StyleSheet,
   Dimensions,
@@ -10,6 +9,8 @@ import {
 } from 'react-native';
 //import { LinearGradient } from 'expo-linear-gradient';
 import LinearGradient from 'react-native-linear-gradient';
+
+import {ViewPropTypes} from 'deprecated-react-native-prop-types';
 
 const {width, height} = Dimensions.get('window');
 
