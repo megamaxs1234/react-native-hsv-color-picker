@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import {
   View,
-  ViewPropTypes,
   StyleSheet,
   Dimensions,
 } from 'react-native';
@@ -10,6 +9,9 @@ import HuePicker from './HuePicker';
 import SaturationValuePicker from './SaturationValuePicker';
 
 const {width, height} = Dimensions.get('window');
+
+import {ViewPropTypes} from 'deprecated-react-native-prop-types';
+
 
 
 export default class HsvColorPicker extends Component {
