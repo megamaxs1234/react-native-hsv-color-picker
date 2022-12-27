@@ -3,12 +3,13 @@ import {
   Animated,
   View,
   TouchableWithoutFeedback,
-  ViewPropTypes,
   PanResponder,
   StyleSheet,
 } from 'react-native';
 //import { LinearGradient } from 'expo-linear-gradient';
 import LinearGradient from 'react-native-linear-gradient';
+
+import {ViewPropTypes} from 'deprecated-react-native-prop-types';
 
 import PropTypes from 'prop-types';
 import chroma from 'chroma-js';
